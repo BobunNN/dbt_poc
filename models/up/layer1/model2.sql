@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', target='dev2') }}
 
 SELECT
   account_name

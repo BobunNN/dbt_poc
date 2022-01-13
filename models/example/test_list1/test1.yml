@@ -1,9 +1,0 @@
-version: 2
-
-models:
-  - name: model1
-    columns:
-      - name: id_record
-        tests:
-          - unique
-          - not_null
