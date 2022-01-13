@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: prep_contract
+    config:      
+      schema: save_nhan_DE_layer1
+
+  - name: datamart_contract_prospect
+    config:      
+      schema: save_nhan_DE_layer2
