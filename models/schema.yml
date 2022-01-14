@@ -1,10 +1,7 @@
 version: 2
 
 models:
-  - name: prep_contract
-    config:      
-      schema: save_nhan_DE_layer1
 
-  - name: datamart_contract_prospect
+  - name: dataframe_realytics
     config:      
-      schema: save_nhan_DE_layer2
+      schema: save_nhan_dbt
