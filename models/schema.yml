@@ -5,6 +5,19 @@ models:
   - name: dataframe_realytics
     config:      
       schema: save_nhan_dbt
+
   - name: prep_realytics_matching
+    config:      
+      schema: save_nhan_dbt
+
+  - name: prep_realytics_app_events
+    config:      
+      schema: save_nhan_dbt
+
+  - name: prep_realytics_call_event
+    config:      
+      schema: save_nhan_dbt
+
+  - name: prep_tv_prospect
     config:      
       schema: save_nhan_dbt
