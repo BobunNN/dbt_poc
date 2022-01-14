@@ -402,12 +402,12 @@ FROM(
 		SELECT DISTINCT prep_final_table.* EXCEPT(ry_user_id)
 		, COALESCE(ry_uid.unique_uid, prep_final_table.ry_user_id) AS ry_user_id
 		FROM prep_final_table
-		LEFT JOIN `souscritoo-1343.bi_preparation.prep_realytics_matching` AS ry_uid
+		LEFT JOIN {{ref('prep_realytics_matching')}} AS ry_uid
 			USING(id_prospect)
 
 	) AS prep_final_table
 
-	LEFT JOIN `souscritoo-1343.bi_preparation.prep_realytics_matching` AS ry_prospect
+	LEFT JOIN {{ref('prep_realytics_matching')}} AS ry_prospect
 		ON prep_final_table.ry_user_id = ry_prospect.ry_user_id
 
 	LEFT JOIN change_organic_value AS org

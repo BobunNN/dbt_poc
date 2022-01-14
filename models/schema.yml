@@ -5,3 +5,6 @@ models:
   - name: dataframe_realytics
     config:      
       schema: save_nhan_dbt
+  - name: prep_realytics_matching
+    config:      
+      schema: save_nhan_dbt
