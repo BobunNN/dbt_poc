@@ -31,7 +31,7 @@ WITH union_table AS(
 	  END AS is_organic
 	, channel_attribution
 	, ccode
-	FROM `souscritoo-1343.bi_preparation.prep_realytics_app_event` 
+	FROM {{ref('prep_realytics_app_events')}}
 	UNION ALL
 	SELECT 
 	  timestamp
@@ -54,7 +54,7 @@ WITH union_table AS(
 	  END AS is_organic
 	, channel_attribution
 	, ccode
-	FROM `souscritoo-1343.bi_preparation.prep_realytics_call_event` 
+	FROM {{ref('prep_realytics_call_event')}} 
 )
 
 
@@ -172,7 +172,7 @@ WITH union_table AS(
     JOIN `souscritoo-1343.raw_airflow_tables.salesforce_opportunityfieldhistory` AS history
       ON opport.id_sf = history.OpportunityId 
 
-    LEFT JOIN `souscritoo-1343.bi_preparation.prep_tv_prospect` AS tv_attribution	
+    LEFT JOIN {{ref('prep_tv_prospect')}} AS tv_attribution	
 			USING(id_prospect)
 
   
